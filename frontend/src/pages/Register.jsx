@@ -36,7 +36,6 @@ const Register = () => {
                 for(let key in formData) {
                     register_form.append(key, formData[key])
                 }
-                console.log(formData)
                 const response = await fetch (`${process.env.REACT_APP_API_URL}/auth/register`, {
                     //headers: { 'Content-Type' : 'application/json' },
                     method: 'POST',
