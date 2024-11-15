@@ -60,7 +60,6 @@ const ListeningDetails = () => {
           endDate: ranges[0].endDate.toDateString(),
           totalPrice: listing.price * dayCount,
         }
-        console.log(bookingForm)
   
         const response = await fetch(`${process.env.REACT_APP_API_URL}/booking/create`, {
           method: "POST",
