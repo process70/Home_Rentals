@@ -47,7 +47,7 @@ app.use("/booking", bookingRoutes)
 app.use("/users", userRoutes)
 
 // Serve static files from the React/Vite app
-app.use(express.static(path.join(__dirname, '../frontend/dist')));
+app.use(express.static(path.join(__dirname, '../frontend/build')));
 
 // Handle React routing, return all requests to React app
-app.get('*', (req, res) => { res.sendFile(path.join(__dirname, '../frontend/dist/index.html'))});
+app.get('*', (req, res) => { res.sendFile(path.join(__dirname, '../frontend/build/index.html'))});
