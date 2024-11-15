@@ -69,7 +69,7 @@ const Register = () => {
                 )}       
                 <input id="image" type="file" name="profileImage" onChange={handleChange} accept="image/*" hidden required/>
                 <label htmlFor="image">
-                    <img src="https://ibb.co/VqsvKTm" alt="add profile photo" />
+                    <img src="https://i.ibb.co/S3zKLBr/addImage.png" alt="add profile photo" />
                     <p>Upload Your Photo</p>
                 </label>
                 {formData.profileImage && (
