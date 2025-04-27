@@ -36,7 +36,10 @@ app.use(upload({
 mongoose.connect(process.env.MONGO_URL)
 .then(() => {
   console.log("Monog DB Running")
-  app.listen(process.env.PORT, () => console.log(`Server running on port ${process.env.PORT}`));
+  // Only start listening if not in Vercel environment
+  if (process.env.NODE_ENV !== 'production') {
+    app.listen(process.env.PORT, () => console.log(`Server running on port ${process.env.PORT}`));
+  }
 })
 .catch((err) => console.log("Error occured when connecting to mongoDB : "+err))
 
@@ -47,7 +50,7 @@ app.use("/booking", bookingRoutes)
 app.use("/users", userRoutes)
 
 // Serve static files from the React/Vite app
-app.use(express.static(path.join(__dirname, '../frontend/build')));
+app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
 // Handle React routing, return all requests to React app
-app.get('*', (req, res) => { res.sendFile(path.join(__dirname, '../frontend/build/index.html'))});
+app.get('*', (req, res) => { res.sendFile(path.join(__dirname, '../frontend/dist/index.html'))});
