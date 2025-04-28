@@ -47,6 +47,7 @@ mongoose.connect(process.env.MONGO_URL)
 .catch((err) => console.log("Error occured when connecting to mongoDB : "+err))
 
 app.use('/public', express.static('public'))  
+app.use('/').json({ message: "API is running" }) // this is the default route for the api
 app.use('/auth', auth)  
 app.use('/listening', listening)
 app.use("/booking", bookingRoutes)
