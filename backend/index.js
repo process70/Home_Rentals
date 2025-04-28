@@ -13,12 +13,7 @@ const { v2 : cloudinary } = require ("cloudinary");
 
 require("dotenv").config()
 
-app.use(cors({
-    origin: process.env.FRONTEND_URL,
-    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true
-}))
+app.use(cors())
 app.use(express.json({ limit: "5mb" }))
 app.use(express.urlencoded({ extended: true })); // to parse form data(urlencoded)
 
