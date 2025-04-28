@@ -40,7 +40,7 @@ mongoose.connect(process.env.MONGO_URL)
 })
 .catch((err) => console.log("Error occured when connecting to mongoDB : "+err))
 
-app.use('/public', express.static('public')) 
+// app.use('/public', express.static('public')) 
 // this is the default route for the api
 app.get('/', (req, res) => {
   res.json({ message: "Hello from server" })
@@ -51,7 +51,7 @@ app.use("/booking", bookingRoutes)
 app.use("/users", userRoutes)
 
 // Serve static files from the React/Vite app
-app.use(express.static(path.join(__dirname, '../frontend/dist')));
+// app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
 // Handle React routing, return all requests to React app
-app.get('*', (req, res) => { res.sendFile(path.join(__dirname, '../frontend/dist/index.html'))});
+// app.get('*', (req, res) => { res.sendFile(path.join(__dirname, '../frontend/dist/index.html'))});
