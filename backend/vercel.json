@@ -10,27 +10,57 @@
     "routes": [
       {
         "src": "/auth/(.*)",
-        "dest": "index.js"
+        "dest": "index.js",
+              "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE,OPTIONS",
+        "Access-Control-Allow-Headers": "X-Requested-With,Content-Type,Authorization"
+      }  
       },
       {
         "src": "/listening/(.*)",
-        "dest": "index.js"
+        "dest": "index.js",
+                "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE,OPTIONS",
+        "Access-Control-Allow-Headers": "X-Requested-With,Content-Type,Authorization"
+      }
       },
       {
         "src": "/booking/(.*)",
-        "dest": "index.js"
+        "dest": "index.js",
+                "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE,OPTIONS",
+        "Access-Control-Allow-Headers": "X-Requested-With,Content-Type,Authorization"
+      }
       },
       {
         "src": "/users/(.*)",
-        "dest": "index.js"
+        "dest": "index.js",
+                "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE,OPTIONS",
+        "Access-Control-Allow-Headers": "X-Requested-With,Content-Type,Authorization"
+      }
       },
       {
         "src": "/public/(.*)",
-        "dest": "index.js"
+        "dest": "index.js",
+                "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE,OPTIONS",
+        "Access-Control-Allow-Headers": "X-Requested-With,Content-Type,Authorization"
+      }
       },
       {
         "src": "/(.*)",
-        "dest": "index.js"
+        "dest": "index.js",
+                "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE,OPTIONS",
+        "Access-Control-Allow-Headers": "X-Requested-With,Content-Type,Authorization"
+      }
       }
     ]
   }
